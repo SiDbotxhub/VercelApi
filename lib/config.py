@@ -4,7 +4,7 @@ from typing import List
 
 class Config:
     # Main API configuration
-    API_KEYS = os.getenv("API_KEYS", "").split(",")
+    API_KEYS = os.getenv("API_KEYS", "abc123,xyz789").split(",")
     CACHE_DURATION = timedelta(minutes=30)
     
     # List of backend APIs to try (in order)
@@ -15,7 +15,7 @@ class Config:
     ]
     
     # Retry configuration
-    MAX_RETRIES = 3
-    RETRY_DELAY = 5  # seconds
-    TIMEOUT = 10  # seconds per request
+    MAX_RETRIES = 5
+    RETRY_DELAY = 4  # seconds
+    TIMEOUT = 4  # seconds per request
     MAX_CONCURRENT_REQUESTS = 100  # Limit concurrent requests
